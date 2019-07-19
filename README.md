@@ -35,4 +35,4 @@ npm run build
 npm start
 ```
 - In a broswer, go to: localhost:3020/:id
-(ex) Choose from restaurants with ids from 1 to 100: localhost:3020/1
+- (ex) Choose from restaurants with ids from 1 to 100: localhost:3020/1
