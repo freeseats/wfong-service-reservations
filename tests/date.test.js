@@ -13,17 +13,3 @@ it('renders correctly', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-// do testing on click func passed down as prop
-
-// can't do below testing anymore since refactored to stateless
-// describe('Date Rendering', () => {
-//   const wrapper = shallow(<DateSection />);
-//   it('should have default date be set to today', () => {
-//     expect(wrapper.state('date')).toBe('Today');
-//   });
-
-//   it('should hide calendar', () => {
-//     expect(wrapper.state('displayCalendar')).toBe(false);
-//   });
-// });

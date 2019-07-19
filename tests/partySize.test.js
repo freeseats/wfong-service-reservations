@@ -27,13 +27,4 @@ describe('Party Size Rendering', () => {
   it('should have default party size be 2', () => {
     expect(wrapper.state('size')).toBe(2);
   });
-
-  // fix issue of this.props.handleSize not a function error
-  // it('should have select list default option value be 2', () => {
-  //   const mockMyEventHandler = jest.fn();
-  //   const wrapper = mount(<PartySize onChange={jest.fn()} />);
-  //   wrapper.setProps({ onChange: mockMyEventHandler });
-  //   wrapper.find('select').simulate('change', '', { value: 2 });
-  //   expect(mockMyEventHandler).toHaveBeenCalledWith(2);
-  // });
 });
