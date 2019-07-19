@@ -4,15 +4,21 @@ import dateFns from 'date-fns';
 
 import '../../../public/styles.css';
 
-// refactor: lots of repetitive code
 const AvailTimes = (props) => {
   const checkTime = props.time.split(' ');
   const checkHour = checkTime[0].split(':');
   const hour = Number(checkHour[0]);
   const timeSlots = props.availTimeSlots;
   let times;
-  // const currentHour = Number(dateFns.format(new Date(), 'H'));
   const currentHour = dateFns.format(new Date(), 'h:mm A');
+
+  let mapTimes = (arr) => {
+    return arr.map(time => {
+      return <div className="avail-time" key={time} >
+        <span className="avail-time-caption">{time}</span>
+      </div>;
+    });
+  };
 
   if (dateFns.format(props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
     const todayTimes = [];
@@ -24,11 +30,7 @@ const AvailTimes = (props) => {
         }
       }
 
-      times = todayTimes.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(todayTimes);
 
       if (todayTimes.length === 0) {
         props.noAvailability();
@@ -43,11 +45,7 @@ const AvailTimes = (props) => {
           }
         }
 
-        times = timesFor4.map(time => {
-          return <div className="avail-time" key={time} >
-            <span className="avail-time-caption">{time}</span>
-          </div>;
-        });
+        times = mapTimes(timesFor4);
 
         if (timesFor4.length === 0) {
           props.noAvailability();
@@ -63,11 +61,7 @@ const AvailTimes = (props) => {
           }
         }
 
-        times = timesFor5.map(time => {
-          return <div className="avail-time" key={time} >
-            <span className="avail-time-caption">{time}</span>
-          </div>;
-        });
+        times = mapTimes(timesFor5);
 
         if (timesFor5.length === 0) {
           props.noAvailability();
@@ -82,11 +76,7 @@ const AvailTimes = (props) => {
           }
         }
 
-        times = timesFor9.map(time => {
-          return <div className="avail-time" key={time} >
-            <span className="avail-time-caption">{time}</span>
-          </div>;
-        });
+        times = mapTimes(timesFor9);
 
         if (timesFor9.length === 0) {
           props.noAvailability();
@@ -101,22 +91,14 @@ const AvailTimes = (props) => {
           }
         }
 
-        times = timesFor10.map(time => {
-          return <div className="avail-time" key={time} >
-            <span className="avail-time-caption">{time}</span>
-          </div>;
-        });
+        times = mapTimes(timesFor10);
 
         if (timesFor10.length === 0) {
           props.noAvailability();
         }
 
       } else {
-        times = props.availTimeSlots.map(time => {
-          return <div className="avail-time" key={time} >
-            <span className="avail-time-caption">{time}</span>
-          </div>;
-        });
+        times = mapTimes(props.availTimeSlots);
 
         if (times.length === 0) {
           props.noAvailability();
@@ -133,11 +115,7 @@ const AvailTimes = (props) => {
         }
       }
 
-      times = timesFor4.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(timesFor4);
 
       if (timesFor4.length === 0) {
         props.noAvailability();
@@ -153,11 +131,7 @@ const AvailTimes = (props) => {
         }
       }
 
-      times = timesFor5.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(timesFor5);
 
       if (timesFor5.length === 0) {
         props.noAvailability();
@@ -172,11 +146,7 @@ const AvailTimes = (props) => {
         }
       }
 
-      times = timesFor9.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(timesFor9);
 
       if (timesFor9.length === 0) {
         props.noAvailability();
@@ -191,22 +161,14 @@ const AvailTimes = (props) => {
         }
       }
 
-      times = timesFor10.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(timesFor10);
 
       if (timesFor10.length === 0) {
         props.noAvailability();
       }
 
     } else {
-      times = props.availTimeSlots.map(time => {
-        return <div className="avail-time" key={time} >
-          <span className="avail-time-caption">{time}</span>
-        </div>;
-      });
+      times = mapTimes(props.availTimeSlots);
 
       if (times.length === 0) {
         props.noAvailability();
