@@ -12,29 +12,18 @@
 
 ## Table of Contents
 
-1. [Requirements](#requirements)
-1. [Development](#development)
+1. [Seeding Database](#SeedingDatabase)
 1. [Usage](#Usage)
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
 
 ### Seeding Database
 - Before seeding, make sure to npm install
-- Log into mySQL from terminal: mySQL -u root -p
+- Log into mySQL from terminal: mysql -u root -p
 - Enter password if set up with one
 - If 'reservations' database exists in mySQL: drop database reservations;
 - Create database in mySQL: create database reservations;
 - Select database: use reservations;
 - Go to db/db.js to change your user and password on line 4
-- Run script:
-npm run seed
+- Run script: npm run seed
 - To check 'reservations' database: select * from restaurants;
 
 ## Usage
@@ -45,4 +34,5 @@ npm install
 npm run build
 npm start
 ```
-- In a broswer, go to: localhost:3020
+- In a broswer, go to: localhost:3020/:id
+(ex) Choose from restaurants with ids from 1 to 100: localhost:3020/1
