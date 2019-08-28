@@ -94,6 +94,9 @@ class Time extends React.Component {
       if (currentMin <= 30) {
         times.splice(0, 1);
       }
+      if (currentMin > 30) {
+        times.splice(0, 2);
+      }
     } else {
       for (let i = 0; i < 24; i++) {
         if (i === 0) {
